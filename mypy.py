@@ -118,3 +118,18 @@ def pairs(array): #fisrt need to check if array pair count is odd or even
                 pair_count = pair_count + 1
         return pair_count
 ========================================
+#find challenge at: https://www.codewars.com/kata/rectangle-into-squares/python
+def sort_sides(lng, wdth):#this function to identify lenghts of sides
+    return sorted([lng, wdth]) #using sorted function, we will return small side fisrt then larger side 2nd
+
+def sqInRect(lng, wdth):
+    if lng == wdth:
+        return None #this reules out squares since we are only interested in rectangles
+    small, large = sort_sides(lng, wdth)
+    print('small', small, 'large', large)
+    squares = []
+    while small > 0:
+        squares.append(small)
+        new_side = large - small
+        small, large = sort_sides(new_side, small)
+    return squares

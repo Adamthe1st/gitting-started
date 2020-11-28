@@ -104,3 +104,17 @@ def high_and_low(numbers_string):
     output_high_low = str(sorted_numbers[-1]) + ' ' + str(sorted_numbers[0])
     return output_high_low
 ===================================================================
+#return the count of pairs that have consecutive numbers as follows:
+#pairs([1,2,5,8,-4,-3,7,6,5]) = 3
+#answer:
+def pairs(array): #fisrt need to check if array pair count is odd or even
+        if len(array) % 2 == 1: #remember, if the remider is 1, then we have odd pair count
+            array = array[0:-1] #this excludes the last integer in the array so that we only have even sets of pairs
+        pair_count = 0            
+        for i in range(0, len(array), 2): #we are looping thro our array.and using range function starting at idex '0' up to 'whole length of array list' then adding a 3rd prameter in our range function which is 'skip' skiping idex of 2 (ie. count starting at idex 0, then 2,4,6 etc)
+            first = array[i] #fisrt = 1st number in a pair set
+            second = array[i+1] #second = 2nd number in a pair set
+            if first + 1 == second or first -1 == second:
+                pair_count = pair_count + 1
+        return pair_count
+========================================

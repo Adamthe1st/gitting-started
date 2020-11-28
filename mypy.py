@@ -1,6 +1,6 @@
 print("Gitting-started")
 
-
+=================================================================
 #you get an array of numbers, return the sum of all of the positives ones.
 #Example [1,-4,7,12] => 1 + 7 + 12 = 20
 #Note: if there is nothing to sum, the sum is default to 0.
@@ -12,7 +12,7 @@ def positive_sum(arr):  #this is the definition satatement of the function being
         if x > 0:
             total = total + num
     return total
-
+==================================================
 #Create a function (or write a script in Shell) 
 #that takes an integer as an argument 
 #and returns "Even" for even numbers or "Odd" for odd numbers.
@@ -23,3 +23,54 @@ def even_or_odd(number): #this is our definition statement for the function
         return 'Even'
     else:
         return 'Odd'
+===============================================
+#Write a function called repeat_str which repeats the given string exactly x times.
+#example:
+#repeatStr(6, "I") // "IIIIII"
+#repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
+
+#answer: the long way:
+def repeat_str(repeat, string): #we start by creating a function statement
+    substring = ' ' # creating a substring with empty string
+    # we are going to "for loop" on the "repeat" argument in line 33
+    # remember repeat is a number we want to repeat, thus we 
+    #are going to use a "range" function:
+    for x in range (repeat):
+        substring = substring + string #this is the same as (substring += string)
+    return substring
+
+#the easy way:
+def repeat_str(repeat, string):
+    return repeat * string
+===========================================
+#Maximums and Minimums: 1.create a function that returns the max number out of list
+#                       2.create a function that returns the min number out of list
+#answer: 1.
+def minimum(arr):
+    return min(arr)
+#2.
+def maximum(arr):
+    return max(arr)
+================================
+#next question:
+def find_needle(haystack):
+    for i, word in enumerate(haystack): #for 'index' of 'word' in enumerate (haystack):
+        if word == "needle":
+            return 'found the needle at position ' + str(i) #notice the space after the word 'position'
+        #also notice 'i' has to be a string so we use 'str(i)' to avoid python error
+==================================
+#function to reverse a string passed into it.
+def solution(string):
+    return string [::-1]
+#[::-1] is a built in function that reverses a list (hi mum) => (ih mum)
+=================================================
+#Create a function that returns the sum of the two lowest positive numbers given an array 
+#No floats or non-positive integers will be passed.
+#For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+#answer:
+def sum_two_smallest_numbers(numbers):
+    sorted_numbers = sorted(numbers) #sorted() is a built in function that sorts smallest to largest
+    #now numbers in the variable 'sorted_numbers' are sorted
+    #smallest 2 numbers are the 1st two numbers. thus:
+    my_first_two_numbers = sorted_numbers[:2] #[:2] gives first two index in list
+    return sum(my_first_two_numbers) #this adds up the two numbers index 0 and index 1

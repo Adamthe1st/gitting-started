@@ -74,3 +74,33 @@ def sum_two_smallest_numbers(numbers):
     #smallest 2 numbers are the 1st two numbers. thus:
     my_first_two_numbers = sorted_numbers[:2] #[:2] gives first two index in list
     return sum(my_first_two_numbers) #this adds up the two numbers index 0 and index 1
+===================================================
+#1. chop the string into numbers separated by comas using .split built in function 
+#2. then turn string into integers 
+#3. then sort smallest to largest
+#4. we will extract smallest number at [0] and largest number at [-1]
+def high_and_low(numbers_string):
+    numbers_string_list = numbers_string.split(' ') #notice space between ' ' to signify we want to split on the actual spaces
+    numbers = [] #creating an empty list
+    #we will loop through 'numbers_string_list' and transform each string into an actual number and add them to the variable 'numbers' we created in the previous line
+    for actual_num_string in numbers_string_list: #starting a 'for loop'
+        n = int(actual_num_string) #int() is a built in function that turns a string into an integer
+        numbers.append(n) #adding numbers as integers into our empty list 'numbers'
+    sorted_numbers = sorted(numbers) #at end of for loop, we are creating a variable 'sorted_numbers' and using the built in func 'sorted()'   
+     #now, we need to return a string with largest num first then smallet num
+    high_low = str(sorted_numbers[-1]) + ' ' + str(sorted_numbers[0])
+        #str() is a built in func to turn a number into a string
+    return high_low
+#this process is called string concatenation which is different from interpolation
+===================================
+#same as previous (just a little cleaner)
+def high_and_low(numbers_string):
+    numbers_string_list = numbers_string.split(' ')
+    numbers = []
+    for x in numbers_string_list:
+        string_to_num = int(x) #transforming string list into integers
+        numbers.append(string_to_num)
+    sorted_numbers = sorted(numbers) #now we sort the numbers samllest - largest using 'sorted' function
+    output_high_low = str(sorted_numbers[-1]) + ' ' + str(sorted_numbers[0])
+    return output_high_low
+===================================================================
